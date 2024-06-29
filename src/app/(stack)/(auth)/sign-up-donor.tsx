@@ -6,6 +6,7 @@ import { useForm } from 'react-hook-form';
 import { View, Text, ScrollView, Alert } from 'react-native';
 import { TextInputMask } from 'react-native-masked-text';
 import { Button, Input } from 'src/components';
+import GoogleButton from 'src/components/GoogleButton';
 import colors from 'src/constants/colors';
 import { useAuth } from 'src/hooks/useAuth';
 import { z } from 'zod';
@@ -94,11 +95,7 @@ export default function SignUp() {
 
             <View>
               <Button customStyles="w-14 justify-center bg-color_third_light">
-                <Ionicons
-                  name="logo-google"
-                  size={24}
-                  color={colors.text_neutral}
-                />
+                <GoogleButton />
               </Button>
             </View>
           </View>

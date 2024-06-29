@@ -2,15 +2,18 @@ import { Ionicons } from '@expo/vector-icons';
 import { DrawerContentScrollView } from '@react-navigation/drawer';
 import { DrawerActions } from '@react-navigation/native';
 import { router, useNavigation } from 'expo-router';
-import React from 'react';
+import React, { useContext } from 'react';
 import { View, Text, TouchableOpacity } from 'react-native';
 import { HeaderStatisticsProfile } from 'src/components';
 import colors from 'src/constants/colors';
+import { UserContext } from 'src/contexts/user';
 import { useAuth } from 'src/hooks/useAuth';
 
 const DrawerContent = (props) => {
   const navigation = useNavigation();
   const { user, signOut } = useAuth();
+  // eslint-disable-next-line @typescript-eslint/no-unused-vars
+  const { user: LoggedUser } = useContext(UserContext);
 
   return (
     <DrawerContentScrollView
