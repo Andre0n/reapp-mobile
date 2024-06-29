@@ -1,12 +1,12 @@
 import { useState, createContext, ReactNode } from 'react';
-
-import UserType from 'src/types/UserType';
+// eslint-disable-next-line @typescript-eslint/no-unused-vars
+import { IUser } from 'src/mocks/user-data';
 
 interface UserContextProps {
-  user: UserType;
+  // user: typeof UserType;
   token: string;
   setToken: React.Dispatch<React.SetStateAction<string>>;
-  setUser: React.Dispatch<React.SetStateAction<UserType>>;
+  // setUser: React.Dispatch<React.SetStateAction<typeof UserType>>;
 }
 
 export const UserContext = createContext<UserContextProps>(
@@ -18,7 +18,7 @@ interface UserProviderProps {
 }
 
 function UserProvider({ children }: UserProviderProps) {
-  const [user, setUser] = useState<UserType>({} as UserType);
+  const [user, setUser] = useState<typeof UserType>({} as typeof UserType);
   const [token, setToken] = useState<string>('');
 
   return (

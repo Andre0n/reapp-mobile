@@ -15,6 +15,7 @@ GoogleSignin.configure({
 
 export default function GoogleButton() {
   const [isSigningIn, setIsSigningIn] = useState(false);
+  // eslint-disable-next-line @typescript-eslint/no-unused-vars
   const { user: userCtx, setUser: setUserCtx } = useContext(UserContext);
 
   const onGoogleButtonPress = async () => {
